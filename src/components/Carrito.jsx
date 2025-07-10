@@ -1,4 +1,4 @@
-export function CartWidget () {
+export function Carrito () {
     return (
         <button>🛒</button>
     )

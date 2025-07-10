@@ -1,33 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
-  margin: 0;
+  font-weight: 500;
+  font-style: normal;
+  font-weight: 700;
+  background-color: lightsteelblue;
+}
+
+h1 {
+    text-transform: capitalize;
+    color: rgb(47, 27, 2);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+p {
+    text-align: justify;
+    margin: 10px;
+}
+
+header {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  height: 70px;
+  background-color: rgba(250, 153, 94, 0.912);
+  padding: 5px;
+}
+
+.nav ul{
+  display: flex;
+  margin-left: 120px;
+}
+
+.nav ul li {
+  display: block;
+  padding: 15px;
+}
+
+.nav ul li:hover {
+  background-color: gold;
 }
 
 h1 {
@@ -46,23 +70,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

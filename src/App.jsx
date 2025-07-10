@@ -1,4 +1,4 @@
-import { ItemListContainer } from "./components/ItemListContainer";
+import { Home } from "./components/Home";
 import { NavBar } from "./components/NavBar";
 
 
@@ -10,7 +10,7 @@ export function App() {
   return (
     <>
     <NavBar/>
-    <ItemListContainer />
+    <Home />
     </>
     
   )
