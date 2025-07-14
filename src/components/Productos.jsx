@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export function Productos() {
 
     const productos = [
@@ -10,12 +12,11 @@ export function Productos() {
     ]
 
     return (
-        <div>
+        <div className="CardProducto">
             {productos.map((producto, indice) => {
                 return (
                     <div key={indice}>
-                        {producto.nombre}
-                        <Link to={`/producto/${producto.id}`}>ver detalle</Link>
+                        <Link to={`/producto/${producto.id}`}>{producto.nombre}</Link>
                     </div>
                 )
             })}

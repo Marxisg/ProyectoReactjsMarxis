@@ -1,16 +1,14 @@
-import { Home } from "./components/Home";
+
 import { NavBar } from "./components/NavBar";
-
-
-
+import { Main } from "./components/Main";
 
 
 export function App() {
 
   return (
     <>
-    <NavBar/>
-    <Home />
+      <NavBar/>
+      <Main/>
     </>
     
   )

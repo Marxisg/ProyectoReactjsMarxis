@@ -6,9 +6,9 @@ export function NavBar () {
             <h1>Daniel's Beer </h1>
             <nav className="nav">
                 <ul>
-                    <li>Home</li>
-                    <li>Productos</li>
-                    <li>Contacto</li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/productos">Productos</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
                 </ul>
             </nav>
             <div>
