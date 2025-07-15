@@ -2,14 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-:root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
+  text-decoration: none;
+ }
 
 body {
   font-weight: 500;
@@ -18,18 +12,29 @@ body {
   background-color: lightsteelblue;
 }
 
+:root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
 h1 {
-    text-transform: capitalize;
-    color: rgb(47, 27, 2);
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
+  text-transform: capitalize;
+  color: rgb(47, 27, 2);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
 }
 
 p {
-    text-align: justify;
-    margin: 10px;
+  text-align: justify;
+  margin: 10px;
 }
 
 header {
@@ -40,14 +45,17 @@ header {
   padding: 5px;
 }
 
-.nav ul{
+.nav ul {
   display: flex;
   margin-left: 120px;
+
 }
 
 .nav ul li {
   display: block;
   padding: 15px;
+  text-decoration: none;
+
 }
 
 .nav ul li:hover {
@@ -57,6 +65,17 @@ header {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.CardProducto {
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.Categoria {
+  padding-bottom: 15px;
+  padding-left: 15px;
+
 }
 
 button {

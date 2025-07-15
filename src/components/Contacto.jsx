@@ -1,5 +1,8 @@
-export function Carrito () {
+export function Contacto() {
+   
+
     return (
-        <P>Si realizaste una compra o tienes alguna duda con respecto a tu pedido no dudes en contactarme.</P>
-    )
+      <p>Si realizaste una compra y tienes alguna pregunta, no dudes en contactarnos.</p>
+            
+    );
 }
