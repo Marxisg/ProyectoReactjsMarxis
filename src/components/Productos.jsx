@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
 import { productos } from "../data/productos"
+import { app } from "../firebaseConfig"
+
+
+
 
 export function Productos() {
 
