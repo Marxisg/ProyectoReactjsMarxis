@@ -1,17 +1,32 @@
 import { Link } from "react-router-dom"
-import { productos } from "../data/productos"
 import { app } from "../firebaseConfig"
 
-
+import { useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 
 export function Productos() {
+    const [productos, setProductos] = useState([]);
 
+    const db = getFirestore(app);
+
+    useEffect(() => {
+        async function fetchProductos() {
+            const snapshot = await getDocs(collection(db, 'products'));
+            const productosFirebase = snapshot.docs.map(doc => ({
+                id: parseInt(doc.id),
+                ...doc.data(),
+            }));
+            setProductos(productosFirebase);
+        }
+
+        fetchProductos();
+    }, []);
 
     return (
         <div>
+            <h2>Productos:</h2>
             <div className="CardProducto">
-                <h2>Productos:</h2>
                 {productos.map((producto, indice) => {
                     return (
                         <div key={indice}>

@@ -1,30 +1,40 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from 'react';
-
-import { productos } from "../data/productos"
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import { app } from "../firebaseConfig"
+import { Link } from "react-router-dom"
 
 export function ProductosPorCategoria() {
-    const [visible, setVisible] = useState(false);
-
     const parametrosUrl = useParams()
 
-        useEffect(() => {
-    const temporizador = setTimeout(() => {setVisible(true);}, 1000)
+const [productos, setProductos] = useState([]);
 
-    return () => clearTimeout(temporizador);
+const db = getFirestore(app);
+
+    useEffect(() => {
+    async function fetchProductos() {
+      const productosCargados = await getDocs(collection(db, 'products'));
+      const productosFirebase = productosCargados.docs.map(doc => ({
+        id: parseInt(doc.id),
+        ...doc.data(),
+      }));
+      setProductos(productosFirebase);
+    }
+
+    fetchProductos();
   }, []);
 
-  if (!visible) return null;
     const categoriaActual = parametrosUrl.categoria
-    const nombres = productos
+const productosCategoria = productos
                     .filter(p => p.categoria === categoriaActual)
-                    .map(p => p.nombre);
 
   return (
+    <div>
     <ul>
-      {nombres.map((nombre, index) => (
-        <li key={index}>{nombre}</li>
+      {productosCategoria.map((producto, index) => (
+        <li key={index}><Link to={`/producto/${producto.id}`}>{producto.nombre}</Link></li>
       ))}
     </ul>
+    </div>
   );
 }
