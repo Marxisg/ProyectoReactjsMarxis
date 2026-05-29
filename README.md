@@ -1,12 +1,16 @@
-# React + Vite
+# Cómo ejecutar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- En una terminal, abrir /backend y ejecutar:
+  - `npm run seed` la primera vez, esto regenera la base de datos con data de prueba
+  - `npm run dev` para levantar el servidor de backend
 
-Currently, two official plugins are available:
+- En otra terminal diferent abrir /frontend y ejecutar `npm run dev` para levantar el frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Testeo de endpoints
 
-## Expanding the ESLint configuration
+Se pueden hacer llamadas como
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+curl --location 'http://localhost:8080/api/products'
+curl --location 'http://localhost:8080/api/carts'
+```
